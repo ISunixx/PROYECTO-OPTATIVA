@@ -1,10 +1,10 @@
-# 🔬 CLASIFICACIÓN AVANZADA DE CÁNCER DE MAMA (Breast Cancer Wisconsin) 🏥
+#  CLASIFICACIÓN AVANZADA DE CÁNCER DE MAMA (Breast Cancer Wisconsin) 
 
 Este proyecto implementa y compara múltiples modelos de Machine Learning para clasificar tumores mamarios como **Benignos** (Clase 1) o **Malignos** (Clase 0), utilizando el popular conjunto de datos Breast Cancer Wisconsin (Diagnóstico) de scikit-learn.
 
 El objetivo principal es identificar el modelo con la **mayor capacidad predictiva** (medida principalmente por el área bajo la curva ROC, **AUC-ROC**) para asistir en el diagnóstico temprano con alta fiabilidad.
 
-## ⚙️ Configuración y Librerías
+## Configuración y Librerías
 
 El análisis fue ejecutado utilizando las siguientes bibliotecas clave de Python:
 
@@ -13,7 +13,7 @@ El análisis fue ejecutado utilizando las siguientes bibliotecas clave de Python
 * **Pandas:** Para manipulación y exploración de datos.
 * **Matplotlib y Seaborn:** Para la generación de gráficos de visualización de resultados.
 
-## 📊 Dataset y Preprocesamiento
+##  Dataset y Preprocesamiento
 
 ### Resumen del Dataset
 
@@ -34,7 +34,7 @@ El conjunto de datos está ligeramente desbalanceado, pero la estratificación e
 1.  **División de Datos:** El dataset se dividió en conjuntos de **Entrenamiento (80%)** y **Prueba (20%)** utilizando la función `train_test_split` con `stratify=y` para mantener la proporción de clases.
 2.  **Escalado de Características:** Se aplicó el `StandardScaler` a todas las características. Esto es crucial para modelos basados en distancia (como KNN y SVM) y para la Regresión Logística, ya que asegura que todas las características contribuyan equitativamente, independientemente de su escala original.
 
-## 🚀 Modelos Evaluados
+## Modelos Evaluados
 
 Se entrenaron y compararon cinco modelos de clasificación avanzados:
 
@@ -46,7 +46,7 @@ Se entrenaron y compararon cinco modelos de clasificación avanzados:
 | **Logistic Regression** | Lineal | Modelo simple que predice la probabilidad de pertenencia a una clase. |
 | **Gradient Boosting** | Ensamblaje (Boosting) | Construye secuencialmente árboles débiles, corrigiendo los errores del anterior. |
 
-## 🎯 Resultados de la Evaluación
+##  Resultados de la Evaluación
 
 El rendimiento se evaluó utilizando la **Precisión (Accuracy)** en el conjunto de prueba, la **Validación Cruzada (5-Fold)** y la métrica clave: el **Área bajo la Curva ROC (AUC-ROC)**.
 
@@ -60,14 +60,14 @@ El rendimiento se evaluó utilizando la **Precisión (Accuracy)** en el conjunto
 | **Logistic Regression** | 98.25% | 97.58% ± 1.39% | 0.998 |
 | **Gradient Boosting** | 95.61% | 96.70% ± 1.88% | 0.985 |
 
-### 🏆 Mejor Modelo
+### Mejor Modelo
 
 El modelo seleccionado como el mejor es el **Support Vector Machine (SVM)**, ya que alcanzó el AUC-ROC más alto.
 
 * **SVM:** AUC-ROC = **0.999** (La capacidad de discriminación es casi perfecta).
 * **Precisión en Test:** **98.25%**
 
-## 📈 Análisis Gráfico de Resultados
+## Análisis Gráfico de Resultados
 
 Los resultados completos se visualizan en el gráfico `analisis_cancer_completo.png` generado por el script.
 
@@ -102,7 +102,7 @@ Si el mejor modelo no proporciona importancia de características (como el SVM c
 4.  **Mean concave points**
 5.  **Mean perimeter**
 
-## 💡 Análisis de Regresión Logística (Impacto de Características)
+## Análisis de Regresión Logística (Impacto de Características)
 
 El análisis de coeficientes del modelo de Regresión Logística, después del escalado, revela las características que tienen el mayor impacto en la clasificación:
 
@@ -116,7 +116,7 @@ El análisis de coeficientes del modelo de Regresión Logística, después del e
 
 Los coeficientes negativos (e.g., *Worst smoothness*, *Worst concavity*, *Worst perimeter*) se asocian con la clase Maligna (0), mientras que los positivos (e.g., *Worst fractal dimension*) se asocian con la clase Benigna (1).
 
-## 📢 Conclusión Final
+##  Conclusión Final
 
 El análisis demuestra que los modelos **Support Vector Machine (SVM)** y **Logistic Regression** son los más adecuados para este problema de clasificación.
 
